@@ -15,10 +15,23 @@ function App() {
   useEffect(()=> {
   getMovies();    
   }, []);
-  console.log(movies);
   return (
     <div>
-      {loading ? <h1>Loading...</h1> : null}
+      {loading ? <h1>Loading...</h1> : ( 
+      <div>
+      {movies.map(movie => (
+      <div key={movie.id}>
+        <img src={movie.medium_cover_image} />
+        <h2>{movie.title}</h2>
+        <p>{movie.summary}</p>
+        <h4>Year: {movie.year}</h4>
+        <ul>
+          {movie.genres.map((genre) =>(<li key={genre}>{genre}</li>))}
+        </ul>
+      </div>
+      ))}
+      </div>
+      )}
       </div>
   );
 }
