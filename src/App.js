@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
 
 function App() {
+  const [loading, setLoading] =useState(true);
+  const[movies, setMovies] = useState([]);
+  const getMovies = async() => {
+    const json =  await (
+      await fetch(
+      `https://yts-proxy.now.sh/list_movies.json`
+    )
+  ).json();
+    setMovies(json.data.movies)
+    setLoading(false)
+  };
+  useEffect(()=> {
+  getMovies();    
+  }, []);
+  console.log(movies);
   return (
     <div>
-      Movie App
+      {loading ? <h1>Loading...</h1> : null}
       </div>
   );
 }
