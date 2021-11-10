@@ -25,18 +25,18 @@ function Detail( ) {
     return(
         <div>
         {loading ? <h1>Loading...</h1>  : null }
-        <div>
+        <div style ={{color: 'white'}}>
          <h1>{movie.title}</h1>
           </div>
           <div>
            <img src = {movie.large_cover_image} alt={title} />
           </div>
-          <div>
+          <div style ={{color: 'white'}}>
               <li>Release: {movie.year}</li>
                 <li> Rating: {movie.rating}</li>
                   <li> Like_count: {movie.like_count} </li>
           </div>
-          <div>
+          <div style ={{color: 'white'}}>
               <h2> Discription</h2>
               <hr/>
             <h3>{movie.description_full}</h3>
