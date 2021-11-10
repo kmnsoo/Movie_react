@@ -20,7 +20,7 @@
   .movie__img {
     position: relative;
     top: -50px;
-    max-width: 150px;
+    max-width: 100px;
     width: 100%;
     margin-right: 30px;
     box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
@@ -29,7 +29,7 @@
   
   .movie__title{
     font-weight: 700;
-  },
+  }
   .movie__year {
     margin: 0;
     font-weight: 300;
@@ -58,3 +58,4 @@
     margin-right: 10px;
     font-size: 14px;
   }
+
