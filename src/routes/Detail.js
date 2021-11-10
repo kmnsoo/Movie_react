@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {useParams,} from 'react-router-dom';
 import Movie from '../components/Movie';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 function Detail( ) {
     const [movie, setMovie] =useState([]);
@@ -23,9 +24,9 @@ function Detail( ) {
     }, []);  
    
     return(
-        <div>
+       <ContentFlex>
         {loading ? <h1>Loading...</h1>  : null }
-        <div style ={{color: 'white'}}>
+        <div style ={{color: 'white', flexDirection:'row'}}>
          <h1>{movie.title}</h1>
           </div>
           <div>
@@ -45,7 +46,7 @@ function Detail( ) {
                 </div>
           </div>
        
-     </div>
+          </ContentFlex>
             
     );
 };
@@ -53,3 +54,8 @@ Movie.propTypes ={
     cast: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default Detail;
+
+const ContentFlex = styled.div`
+  max-width: 1160px;
+  margin:0 auto;
+  `;
